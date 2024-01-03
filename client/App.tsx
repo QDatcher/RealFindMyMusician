@@ -5,6 +5,7 @@
  * @format
  */
 
+import { NativeBaseProvider } from 'native-base';
 import React from 'react';
 import type {PropsWithChildren} from 'react';
 import Login from './src/Components/Screens/Login/Login';
@@ -64,7 +65,9 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <Login />
+    <NativeBaseProvider>
+      <Login />
+    </NativeBaseProvider>
     // <SafeAreaView style={backgroundStyle}>
     //   <StatusBar
     //     barStyle={isDarkMode ? 'light-content' : 'dark-content'}
@@ -95,6 +98,8 @@ function App(): React.JSX.Element {
     //     </View>
     //   </ScrollView>
     // </SafeAreaView>
+
+
   );
 }
 
