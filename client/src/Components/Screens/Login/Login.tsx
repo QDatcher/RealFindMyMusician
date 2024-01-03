@@ -1,6 +1,6 @@
 import {useState} from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native'
-
+import {View, Text, TextInput, StyleSheet} from 'react-native';
+import { Button } from "native-base";
 
 const Login = () => {
   const [ username, setUsername] = useState('')
@@ -22,6 +22,7 @@ const Login = () => {
           <View style={styles.inputContainer}>
             <Text>Password</Text>
             <TextInput style={styles.textInput} />
+            <Button size="sm" variant="ghost">Tester Button</Button>
           </View>
         </View>
       </View>
