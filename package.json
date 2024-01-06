@@ -4,8 +4,8 @@
     "description": "A fullstack app for connecting musicians",
     "author": "Quentnin Datcher & Tanner Fink",
     "scripts": {
-        "start-server": "",
-        "start-client": "cd client && npx react-native start",
+        "server": "",
+        "client": "cd client && npx react-native start",
         "install": "cd server && npm i && cd ../client && npm i",
         "build": "cd client && npm run build",
         "test": "npm run test --prefix client && npm run test --prefix server"
