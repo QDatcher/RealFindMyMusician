@@ -9,7 +9,5 @@
         "install": "cd server && npm i && cd ../client && npm i",
         "build": "cd client && npm run build",
         "test": "npm run test --prefix client && npm run test --prefix server"
-    },
-    "devDependencies": {
     }
 }
