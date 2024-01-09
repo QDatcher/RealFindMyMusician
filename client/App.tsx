@@ -1,7 +1,8 @@
 import { NativeBaseProvider } from 'native-base';
-// import { NavigationContainer } from '@react-navigation/native';
-// import { createStackNavigator } from '@react-navigation/stack';
+import { NavigationContainer } from '@react-navigation/native';
+import { createStackNavigator } from '@react-navigation/stack';
 import React from 'react';
+import 'react-native-gesture-handler';
 import type {PropsWithChildren} from 'react';
 import Login from './src/Components/Screens/Login/Login';
 import FirstPage from './src/Components/Screens/FirstPage/FirstPage';
@@ -53,16 +54,16 @@ function Section({children, title}: SectionProps): React.JSX.Element {
   );
 }
 
-// const Stack = createStackNavigator();
+const Stack = createStackNavigator();
 
-// const OnBoardingStack = () => {
-//   return (
-//     // <Stack.Navigator>
-//     //   <Stack.Screen name="firstPage" component={FirstPage}/>
-//     //   <Stack.Screen name="login" component={Login}/>
-//     // </Stack.Navigator>
-//   )
-// }
+const OnBoardingStack = () => {
+  return (
+    <Stack.Navigator initialRouteName="firstPage">
+      <Stack.Screen name="firstPage" component={FirstPage}/>
+      <Stack.Screen name="Login" component={Login}/>
+    </Stack.Navigator>
+  )
+}
 
 function App(): React.JSX.Element {
   const isDarkMode = useColorScheme() === 'dark';
@@ -72,15 +73,17 @@ function App(): React.JSX.Element {
   };
 
   return (
-    <NativeBaseProvider>
-      <FirstPage />
-    </NativeBaseProvider>
-    
     // <NativeBaseProvider>
-    //   <NavigationContainer>
-    //     <OnBoardingStack />
-    //   </NavigationContainer>
+    //   <FirstPage />
     // </NativeBaseProvider>
+    
+    <NativeBaseProvider>
+      <NavigationContainer>
+       {/* <FirstPage /> */}
+        <OnBoardingStack />
+      
+      </NavigationContainer>
+    </NativeBaseProvider>
     // <SafeAreaView style={backgroundStyle}>
     //   <StatusBar
     //     barStyle={isDarkMode ? 'light-content' : 'dark-content'}
